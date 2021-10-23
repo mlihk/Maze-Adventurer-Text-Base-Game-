@@ -1,2 +1,3 @@
-# CM1101
+# Ex6
 
+Excercise 6
