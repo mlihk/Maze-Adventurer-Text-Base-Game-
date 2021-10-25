@@ -43,7 +43,7 @@ enemy_mecha = {
     "base_damage": 30
 }
 
-rooms = {
+enemies = {
     "Goblin ON": enemy_goblin_on,
     "Goblin OE": enemy_goblin_oe,
     "Goblin OW": enemy_goblin_ow,
