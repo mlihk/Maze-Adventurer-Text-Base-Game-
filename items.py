@@ -1,31 +1,39 @@
-item_id = {
-    "id": "id",
+item_bow = {
+    "id": "bow",
 
-    "name": "id card",
-
-    "description":
-    """You new shiny student ID card. Expires 1 June 2017.
-You wonder why they have printed a suicide hotline number on it?..."""
-}
-
-item_laptop = {
-    "id": "laptop",
-
-    "name": "laptop",
+    "name": "sturdy bow",
 
     "description":
-    "It has seen better days. At least it has a WiFi card!"
+    """Bow description"""
+
+    "damage": 10
 }
 
-item_money = {
-    "id": "money",
+item_staff = {
+    "id": "staff",
 
-    "name": "money",
+    "name": "magical staff",
 
     "description":
-    "This wad of cash is barely enough to pay your tuition fees."
+    "staff that does stuff",
+
+    "damage": 10
 }
 
+item_sword = {
+    "id": "sword",
+
+    "name": "rusty sword",
+
+    "description":
+    "sword that attacks",
+
+    "damage": 10
+}
+
+
+
+'''
 item_biscuits = {
     "id": "biscuits",
 
@@ -49,3 +57,4 @@ item_handbook = {
 
     "description": "This student handbook explains everything. Seriously."
 }
+'''
