@@ -1,81 +1,176 @@
 from items import *
 
-room_reception = {
-    "name": "Reception",
+room_os = {
+    "name": "OS",
 
     "description":
-    """You are in a maze of twisty little passages, all alike.
-Next to you is the School of Computer Science and
-Informatics reception. The receptionist, Matt Strangis,
-seems to be playing an old school text-based adventure
-game on his computer. There are corridors leading to the
-south and east. The exit is to the west.""",
+    """You are in a chamber with a corridor leading NORTH and a door 
+    leading SOUTH. The Southern door has wires attached to it.""",
 
-    "exits": {"south": "Admins", "east": "Tutor", "west": "Parking"},
-
-    "items": [item_biscuits, item_handbook]
-}
-
-room_admins = {
-    "name": "MJ and Simon's room",
-
-    "description":
-    """You are leaning agains the door of the systems managers'
-room. Inside you notice Matt "MJ" John and Simon Jones. They
-ignore you. To the north is the reception.""",
-
-    "exits":  {"north": "Reception"},
+    "exits": {"north": "S"},
 
     "items": []
 }
 
-room_tutor = {
-    "name": "your personal tutor's office",
+room_s = {
+    "name": "S",
 
     "description":
-    """You are in your personal tutor's office. He intently
-stares at his huge monitor, ignoring you completely.
-On the desk you notice a cup of coffee and an empty
-pack of biscuits. The reception is to the west.""",
+    """You see a shimmering red barrier in front of you, the whir of mechanisms 
+    can be heard beyond its threshold. To your EAST, SOUTH and WEST, are 
+    3 corridors with no distinguishing features other than the torches that 
+    light the way.""",
 
-    "exits": {"west": "Reception"},
+    "exits": {"north": "BR","east": "SE","west": "SW","south": "OS"},
+
+    "items": []
+}
+room_sw = {
+    "name": "SW",
+
+    "description":
+    """The room is made of stone, to the NORTH and EAST 
+    are corridors leading away.""",
+
+    "exits": {"north": "W","east": "S"},
+
+    "items": []
+}
+room_w = {
+    "name": "W",
+
+    "description":
+    """You enter the room. To the NORTH, WEST and SOUTH are 
+    corridors that lead further into the maze. To your EAST 
+    to see a large room with seemingly no floor, in the 
+    centre is a Pillar of stone and grinding gears, you 
+    can see no further way to continue this direction.""",
+
+    "exits": {"north": "NW", "west": "OW", "south": "SW"},
+
+    "items": []
+}
+room_ow = {
+    "name": "OW",
+
+    "description":
+    """The room contains one exit to the EAST, the lifeless corpse of a Goblin like creature lays still. 
+    Above the exit you see a sign “All 3, you, they, be free.”""",
+
+    "exits": {"east": "W"},
+
+    "items": []
+}
+room_nw = {
+    "name": "NW",
+
+    "description":
+    """The room is made of stone, to the 
+    EAST and SOUTH are corridors leading away.""",
+
+    "exits": {"east": "N","south":"W"},
+
+    "items": []
+}
+room_n = {
+    "name": "N",
+
+    "description":
+    """You enter the room. To the WEST, NORTH and EAST are corridors 
+    that lead further into the maze. To your SOUTH to see a large room 
+    with seemingly no floor, in the centre is a Pillar of stone and 
+    grinding gears, you can see no further way to continue this direction.""",
+
+    "exits": {"west": "NW","north":"ON","east":"NE"},
+
+    "items": []
+}
+room_on = {
+    "name": "ON",
+
+    "description":
+    """The room contains one exit to the SOUTH, the lifeless corpse of a 
+    Goblin like creature lays still. Above the exit you see a 
+    sign “All 3, you, they, be free.”""",
+
+    "exits": {"south": "N"},
+
+    "items": []
+}
+room_ne = {
+    "name": "NE",
+
+    "description":
+    """The room is made of stone, to the SOUTH and WEST are corridors leading 
+    away. A small piece of writing is on the wall…Cake = Lie.""",
+
+    "exits": {"south": "E","west":"N"},
+
+    "items": []
+}
+room_e = {
+    "name": "E",
+
+    "description":
+    """You are in a chamber with a corridor leading NORTH and a door 
+    leading SOUTH. The Southern door has wires attached to it.""",
+
+    "exits": {"north": "NE","south":"SE","east":"OE"},
+
+    "items": []
+}
+room_oe = {
+    "name": "OE",
+
+    "description":
+    """The room contains one exit to the WEST, the lifeless corpse of a 
+    Goblin like creature lays still. 
+    Above the exit you see a sign “All 3, you, they, be free.”.""",
+
+    "exits": {"west": "E"},
+
+    "items": []
+}
+room_se = {
+    "name": "SE",
+
+    "description":
+    """The room is made of stone, 
+    to the WEST and NORTH are corridors leading away.""",
+
+    "exits": {"north": "E","west":"S"},
+
+    "items": []
+}
+room_br = {
+    "name": "BR",
+
+    "description":
+    """You are in a large room with the remains of Mechakirill 
+    the light showing the activation of the exit button 
+    is glowing green. To your SOUTH you see the exit to another room, 
+    and a light in the distance.""",
+
+    "exits": {"south": "S"},
 
     "items": []
 }
 
-room_parking = {
-    "name": "the parking lot",
-
-    "description":
-    """You are standing in the Queen's Buildings parking lot.
-You can go south to the COMSC reception, or east to the
-general office.""",
-
-    "exits": {"east": "Office", "south": "Reception"},
-
-    "items": []
-}
-
-room_office = {
-    "name": "the general office",
-
-    "description":
-    """You are standing next to the cashier's till at
-30-36 Newport Road. The cashier looks at you with hope
-in their eyes. If you go west you can return to the
-Queen's Buildings.""",
-
-    "exits": {"west": "Parking"},
-
-    "items": [item_pen]
-}
 
 
 
 rooms = {
-    "Reception": room_reception,
-    "Admins": room_admins,
-    "Tutor": room_tutor,
-    "Parking": room_parking,
-    "Office": room_office
+    "OS": room_os,
+    "S": room_s,
+    "SW": room_sw,
+    "W": room_w,
+    "OW": room_ow,
+    "NW": room_nw,
+    "N": room_n,
+    "ON": room_on,
+    "NE": room_ne,
+    "E": room_e,
+    "OE": room_oe,
+    "SE": room_se,
+    "BR": room_br
 }
