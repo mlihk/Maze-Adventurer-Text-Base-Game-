@@ -61,7 +61,7 @@ item_armour = {
     "id": "armour",
 
     "description":
-    "Heavy armour block block",
+    "Heavy armour that adds 100hp",
 
     "healing": 100
 }
