@@ -5,7 +5,85 @@ from player import *
 from items import *
 from enemies import *
 from gameparser import *
+import time
+import math
+import playsound
+import threading
 
+##### Timer for score ######## Marcus
+def timeToHurry():
+    print('unknown voice: 3 minutes has passed, quick or we are all dead!')
+ 
+ 
+timer = threading.Timer(180.0, timeToHurry)
+timer.start()
+ 
+startingTimer = time.time() #constant please do not touch
+ 
+def getTimer(): #use to get the time taken to finish the game
+    usedTime = time.time() - startingTimer
+    print(usedTime)
+    return usedTime
+ 
+def timeToGrade(usedTime): # converts the time into a grade
+    if usedTime <= 60:
+        gradeS(usedTime)
+        return
+    elif usedTime <= 120 and usedTime > 60:
+        gradeA(usedTime)
+        return
+    elif usedTime <= 180 and usedTime > 120:
+        gradeB(usedTime)
+    elif usedTime <= 240 and usedTime > 180:
+        gradeC(usedTime)
+    elif usedTime > 240:
+        gradeD(usedTime)
+ 
+def gradeS(usedTime):
+    print('Time used: ', math.floor(usedTime))
+    print('Grade equivilant: S')
+    print('unknown voice: Well done! You have shown an amazing performance that no one has ever done!')
+    sound_victory_music()
+ 
+def gradeA(usedTime):
+    print('Time used: ', math.floor(usedTime))
+    print('Grade equivilant: A')
+    print('unknown voice: Good job! Impressive skills, you have saved the day!')
+ 
+def gradeB(usedTime):
+    print('Time used: ', math.floor(usedTime))
+    print('Grade equivilant: B')
+    print('unknown voice: Great! The evil has now been eliminated!')
+ 
+ 
+def gradeC(usedTime):
+    print('Time used: ', math.floor(usedTime))
+    print('Grade equivilant: C')
+    print('unknown voice: Well, we did it at last!')
+ 
+def gradeD(usedTime):
+    print('Time used: ', math.floor(usedTime))
+    print('Grade equivilant: D')
+    print('unknown voice: That was a close one!')
+
+###################################################################
+    
+
+def start():
+    global current_room
+    print("“Where is this place?”…")
+    
+    print("""The fall through the chambers ceiling was painful enough, but the daunting moment of
+realisation that you have now entered an underground structure, matching those you would
+have found in Maps and Mummies from Wizards of the Ghost.""")
+
+    while inventory == []:
+        exits = []
+        print_room(current_room)
+        command = menu(exits, current_room["items"], inventory)
+        execute_command(command)
+        
+    current_room = rooms["OS"]
 
 
 def list_of_items(items):
@@ -91,6 +169,9 @@ def print_exit(direction, leads_to):
     
     print("GO " + direction.upper() + " to " + leads_to + ".")
 
+def boss_spawn(enemies): #check if all enemies are dead, opens boss doors
+    if (enemy_goblin_on["alive"] and enemy_goblin_oe["alive"] and enemy_goblin_ow["alive"]) == False:
+        rooms["OS"] = rooms["Boss"]
 
 def print_menu(exits, room_items, inv_items):
     """This function displays the menu of available actions to the player. The
@@ -246,11 +327,17 @@ def move(exits, direction):
 # This is the entry point of our program
 def main():
 
+    #pick a weapon
+    start()
+
+
     # Main game loop
     while True:
+        #checks to see if anything needs to be changed
+        boss_spawn(enemies)
         # Display game status (room description, inventory etc.)
         print_room_enemies(current_room)
-        combat(current_room)
+        #combat(current_room)
         print_room(current_room)
         print_inventory_items(inventory)
 
@@ -267,4 +354,5 @@ def main():
 # See https://docs.python.org/3.4/library/__main__.html for explanation
 if __name__ == "__main__":
     main()
+
 

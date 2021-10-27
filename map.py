@@ -1,6 +1,21 @@
 from items import *
 from enemies import *
 
+room_start = {
+    "name": "Beginning",
+
+    "description": """In front you see a SWORD, a BOW and a STAFF, before the room opens to a corridor dark,
+and foreboding. To your rear, you see a large door, with a strangely out of place set of wires
+running into it, the switch must be somewhere!""",
+
+    "exits": {},
+
+    "enemies": [],
+    
+    "items": [item_bow, item_staff, item_sword]
+    }
+    
+
 room_os = {
     "name": "OS",
 
@@ -184,6 +199,8 @@ and a light in the distance.""",
 
 
 rooms = {
+    "Beginning": room_start,
+    "Boss": room_os_boss,
     "OS": room_os,
     "S": room_s,
     "SW": room_sw,

@@ -88,5 +88,6 @@ items = {
     "healing ring": item_hp_ring,
     "heavy armour": item_armour,
     "potion": item_potion
+}
     
     
