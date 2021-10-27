@@ -60,6 +60,24 @@ light the way.""",
 
     "items": []
 }
+
+room_s_boss = {
+    "name": "S",
+
+    "description":
+    """The Shimmering red barrier NORTH has vanished. the whir of mechanisms 
+can be heard beyond its threshold. To your EAST, SOUTH and WEST, are 
+3 corridors with no distinguishing features other than the torches that 
+light the way.""",
+
+    "exits": {"north": "BR","east": "SE","west": "SW","south": "OS"},
+
+    "enemies": [],
+
+    "items": []
+
+}
+
 room_sw = {
     "name": "SW",
 
@@ -218,7 +236,8 @@ and a light in the distance.""",
 
 rooms = {
     "Beginning": room_start,
-    "Boss": room_os_boss,
+    "BossOS": room_os_boss,
+    "BossS": room_s_boss,
     "OS": room_os,
     "S": room_s,
     "SW": room_sw,

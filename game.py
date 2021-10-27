@@ -172,8 +172,9 @@ def print_exit(direction, leads_to):
     print("GO " + direction.upper() + " to " + leads_to + ".")
 
 def boss_spawn(enemies): #check if all enemies are dead, opens boss doors
-    if (enemy_goblin_on["alive"] and enemy_goblin_oe["alive"] and enemy_goblin_ow["alive"]) == False:
-        rooms["OS"] = rooms["Boss"]
+    if (enemy_goblin_on["alive"] == False and enemy_goblin_oe["alive"] == False and enemy_goblin_ow["alive"] == False):
+        rooms["OS"] = rooms["BossOS"]
+        rooms["S"] = rooms["BossS"]
 
 def print_menu(exits, room_items, inv_items):
     """This function displays the menu of available actions to the player. The
