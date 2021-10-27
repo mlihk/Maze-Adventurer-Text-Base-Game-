@@ -6,6 +6,17 @@ enemy_goblin_on = {
     "description":
      """As you enter the room, a snigger and chuckle meet you from the opposite corner, slightly shining eyes meet your gaze, their owner lunges towards you.""",
 
+    "ASCII": """
+            ((.-""-.))     
+        |\  \/      \/  /|
+        | \ / =.  .= \ / |
+        \( \   o\/o   / )/
+         \_, '-/  \-' ,_/
+               \__/   
+           \ \__/\__/ /
+         ___\ \|--|/ /___
+       (`    \      /    `)    
+       |      '----'      |""",
 
     "death": "As the goblin falls back you here a mechanised cacophony of sound radiating from behind you.",
 
@@ -22,6 +33,18 @@ enemy_goblin_oe = {
 
     "description":
     """From the ceiling falls a creature with the grace of a rock, he looks up to you and unsheathes its daggers.""",
+
+    "ASCII": """
+            ((.-""-.))     
+        |\  \/      \/  /|
+        | \ / =.  .= \ / |
+        \( \   o\/o   / )/
+         \_, '-/  \-' ,_/
+               \__/   
+           \ \__/\__/ /
+         ___\ \|--|/ /___
+       (`    \      /    `)    
+       |      '----'      |""",
     
     "death": "As the goblin falls back you here a mechanised cacophony of sound radiating from behind you.",
 
@@ -39,6 +62,18 @@ enemy_goblin_ow = {
     "description":
     """As you enter the room, a cackle then cry comes from the corner, bearing two knives, and pale green skin, the
 creature lunges at you.""",
+
+    "ASCII": """
+            ((.-""-.))     
+        |\  \/      \/  /|
+        | \ / =.  .= \ / |
+        \( \   o\/o   / )/
+         \_, '-/  \-' ,_/
+               \__/   
+           \ \__/\__/ /
+         ___\ \|--|/ /___
+       (`    \      /    `)    
+       |      '----'      |""",
 
     "death": "As the goblin falls back you here a mechanised cacophony of sound radiating from behind you.",
 

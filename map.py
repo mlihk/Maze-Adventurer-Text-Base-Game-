@@ -38,7 +38,7 @@ room_os_boss = {
 NORTH and a door leading SOUTH. The Southern door is open you can see
 the light of the world.""",
 
-    "exits": {"north": "S", "south": "BR"},
+    "exits": {"north": "S"},
 
     "enemies": [],
 
@@ -54,7 +54,7 @@ can be heard beyond its threshold. To your EAST, SOUTH and WEST, are
 3 corridors with no distinguishing features other than the torches that 
 light the way.""",
 
-    "exits": {"north": "BR","east": "SE","west": "SW","south": "OS"},
+    "exits": {"east": "SE","west": "SW","south": "OS"},
 
     "enemies": [],
 

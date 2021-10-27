@@ -4,6 +4,15 @@ item_bow = {
 
     "id": "bow",
 
+    "ASCII":
+    """   (
+    )
+     )
+##-------->        
+     )
+    )
+   (""",
+
     "description":
     """A Short bow made of Elm; it comes with a quiver of at least 5 arrows.""",
 
@@ -16,6 +25,13 @@ item_staff = {
 
     "id": "staff",
 
+    "ASCII": """.^.:.
+ <.*.'::.      
+   |  .:''    
+   |    
+   |        
+   |  """, 
+
     "description":
     """A two metre tall Staff of alder, it has a shiny gem on top…If only you could choose rogue.""",
 
@@ -27,6 +43,10 @@ item_sword = {
     "name": "rusty sword",
 
     "id": "sword",
+
+    "ASCII": """      /| ________________
+O|===|* >________________>
+      \|""",
 
     "description":
     """An 80cm long blade and hilt, accompanied by a beautiful scabbard.""",

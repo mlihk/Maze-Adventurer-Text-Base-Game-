@@ -84,7 +84,9 @@ have found in Maps and Mummies from Wizards of the Ghost.""")
         print_room(current_room)
         command = menu(exits, current_room["items"], inventory)
         execute_command(command)
-        
+    for item in inventory:
+        print()
+        print(item["ASCII"])
     current_room = rooms["OS"]
 
 
@@ -104,12 +106,14 @@ def list_of_items(items):
 
 def print_room_enemies(room):
     if room["enemies"] == []:
-        print("\nThere are no ememies in this room\n")
+        pass
 
     else:
         enemy = room.get("enemies")
         print("\n")
         print(enemy[0]["description"])
+        print("\n")
+        print (enemy[0]["ASCII"])
         print("\n")
     
 
