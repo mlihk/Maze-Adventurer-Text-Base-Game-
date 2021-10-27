@@ -10,6 +10,7 @@ import math
 import playsound
 import threading
 from playsound import *
+import random
 
 ##### Timer for score ######## Marcus
 def timeToHurry():
@@ -325,13 +326,22 @@ def move(exits, direction):
     # Next room to go to
     return rooms[exits[direction]]
 
-
+def random_spawn_item(item):
+    random_list = ["ON","NW","N","NE","OW","W","E","OE","SW","S","SE"]
+    room_r = random.choice(random_list)
+    x = rooms[room_r].get("items")
+    x.append(item)
+    
 # This is the entry point of our program
 def main():
 
+    # Spawn items in random rooms
+    random_spawn_item(item_hp_ring)
+    random_spawn_item(item_gauntlets)
+    random_spawn_item(item_armour)
+    random_spawn_item(item_potion)
     #pick a weapon
     start()
-
 
     # Main game loop
     while True:

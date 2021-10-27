@@ -44,7 +44,7 @@ item_hp_ring = {
 
     "healing": 10
 }
-item_dmg_gauntlets = {
+item_gauntlets = {
     "name": "damage gauntlets",
 
     "id": "gauntlets",
@@ -66,11 +66,11 @@ item_armour = {
     "healing": 100
 }
 item_potion = {
-    "name": "potion",
+    "name": "healing potion",
 
     "quantity": 1,
 
-    "id": "healing potion",
+    "id": "potion",
 
     "description":
     "Fully replenishes health",
