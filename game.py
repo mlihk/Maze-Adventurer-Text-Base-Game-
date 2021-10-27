@@ -326,7 +326,7 @@ def move(exits, direction):
     # Next room to go to
     return rooms[exits[direction]]
 
-def random_spawn_item(item):
+def random_spawn_item(item):    # This is run before the game starts to spawn items around the map
     random_list = ["ON","NW","N","NE","OW","W","E","OE","SW","S","SE"]
     room_r = random.choice(random_list)
     x = rooms[room_r].get("items")
