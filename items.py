@@ -1,51 +1,93 @@
-item_id = {
-    "id": "id",
+item_bow = {
 
-    "name": "id card",
+    "name": "sturdy bow",
 
-    "description":
-    """You new shiny student ID card. Expires 1 June 2017.
-You wonder why they have printed a suicide hotline number on it?..."""
-}
+    "class": "weapon",
 
-item_laptop = {
-    "id": "laptop",
-
-    "name": "laptop",
+    "id": "bow",
 
     "description":
-    "It has seen better days. At least it has a WiFi card!"
+    """A Short bow made of Elm; it comes with a quiver of at least 5 arrows.""",
+
+    "damage": 10
 }
 
-item_money = {
-    "id": "money",
+item_staff = {
 
-    "name": "money",
+    "name": "magical staff",
+
+    "class": "weapon",
+
+    "id": "staff",
 
     "description":
-    "This wad of cash is barely enough to pay your tuition fees."
+    """A two metre tall Staff of alder, it has a shiny gem on top…If only you could choose rogue.""",
+
+    "damage": 10
 }
 
-item_biscuits = {
-    "id": "biscuits",
+item_sword = {
 
-    "name": "a pack of biscuits",
+    "name": "rusty sword",
 
-    "description": "A pack of biscuits."
+    "class": "weapon",
+
+    "id": "sword",
+
+    "description":
+    """An 80cm long blade and hilt, accompanied by a beautiful scabbard.""",
+
+    "damage": 10
 }
 
-item_pen = {
-    "id": "pen",
+item_hp_ring = {
+    "name": "healing ring",
+
+    "class": "heal",
+
+    "id": "ring",
+
+    "description": "ring that heals",
+
+    "healing": 10,
+
+    "single-use": False
+
+}
+item_dmg_gauntlet = {
+    "name": "damage gauntlet",
+
+    "class": "modifier",
+
+    "id": "gauntlet",
+
+    "description": "Damage gauntlets increases your damage by 20%"
+}
+
+item_armour = {
+    "name": "heavy armour",
+
+    "class": "modifier",
+
+    "id": "armour",
+
+    "description": "Heavy armour absorbs 20% damage"
+}
+
+item_potion = {
+    "name": "healing potion",
+
+    "class": "heal",
+
+    "quantity": 1,
+
+    "id": "potion",
+
+    "description": "Fully replenishes health",
+
+    "healing": 100,
+
+    "single-use": True
+}
+
     
-    "name": "a pen",
-
-    "description": "A basic ballpoint pen."
-}
-
-item_handbook = {
-    "id": "handbook",
-    
-    "name": "a student handbook",
-
-    "description": "This student handbook explains everything. Seriously."
-}
