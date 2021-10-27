@@ -2,6 +2,8 @@ item_bow = {
 
     "name": "sturdy bow",
 
+    "class": "weapon",
+
     "id": "bow",
 
     "ASCII":
@@ -23,6 +25,8 @@ item_staff = {
 
     "name": "magical staff",
 
+    "class": "weapon",
+
     "id": "staff",
 
     "ASCII": """.^.:.
@@ -42,6 +46,8 @@ item_sword = {
 
     "name": "rusty sword",
 
+    "class": "weapon",
+
     "id": "sword",
 
     "ASCII": """      /| ________________
@@ -57,36 +63,44 @@ O|===|* >________________>
 item_hp_ring = {
     "name": "healing ring",
 
+    "class": "heal",
+
     "id": "ring",
 
     "description":
     "ring that heals",
 
-    "healing": 10
+    "healing": 10,
+
+    "single-use": False
 }
-item_gauntlets = {
+
+item_dmg_gauntlet = {
     "name": "damage gauntlets",
 
-    "id": "gauntlets",
+    "class": "modifier",
+
+    "id": "gauntlet",
 
     "description":
-    "double damage",
-
-    "healing": 10
+    "Damage gauntlets increases your damage by 20%"
 }
 
 item_armour = {
     "name": "heavy armour",
 
+    "class": "modifier",
+
     "id": "armour",
 
     "description":
-    "Heavy armour that adds 100hp",
-
-    "healing": 100
+    "Heavy armour absorbs 20% damage"
 }
+
 item_potion = {
     "name": "healing potion",
+
+    "class": "heal",
 
     "quantity": 1,
 
@@ -95,9 +109,9 @@ item_potion = {
     "description":
     "Fully replenishes health",
 
-    "potion heal": True,
-    
-    "potions empty": False
+    "healing": 100,
+
+    "single-use": True    
 }
 
 

@@ -1,6 +1,9 @@
 from items import *
 from map import rooms
-player = {"name": "", "alive": True, "health": 100, "gold": 0}
+
 inventory = []
+#inventory = [item_sword, item_hp_ring, item_potion]
+plrhealth = int(1)
+plrgold = int(0)
 # Start game at the beginning of story
 current_room = rooms["Beginning"]

@@ -9,6 +9,7 @@ import time
 import math
 import playsound
 import threading
+import sys
 from playsound import *
 import random
 
@@ -45,28 +46,32 @@ def gradeS(usedTime):
     print('Time used: ', math.floor(usedTime))
     print('Grade equivilant: S')
     print('unknown voice: Well done! You have shown an amazing performance that no one has ever done!')
-    sound_victory_music()
+    #sound_victory_music()
+    sys.exit()
  
 def gradeA(usedTime):
     print('Time used: ', math.floor(usedTime))
     print('Grade equivilant: A')
     print('unknown voice: Good job! Impressive skills, you have saved the day!')
+    sys.exit()
  
 def gradeB(usedTime):
     print('Time used: ', math.floor(usedTime))
     print('Grade equivilant: B')
     print('unknown voice: Great! The evil has now been eliminated!')
- 
+    sys.exit() 
  
 def gradeC(usedTime):
     print('Time used: ', math.floor(usedTime))
     print('Grade equivilant: C')
     print('unknown voice: Well, we did it at last!')
+    sys.exit()
  
 def gradeD(usedTime):
     print('Time used: ', math.floor(usedTime))
     print('Grade equivilant: D')
     print('unknown voice: That was a close one!')
+    sys.exit()
 
 ###################################################################
     
@@ -111,7 +116,7 @@ def print_room_enemies(room):
     else:
         enemy = room.get("enemies")
         print("\n")
-        print(enemy[0]["description"])
+        print(enemy[0]["intro"])
         print("\n")
         print (enemy[0]["ASCII"])
         print("\n")
@@ -336,25 +341,120 @@ def random_spawn_item(item):    # This is run before the game starts to spawn it
     room_r = random.choice(random_list)
     x = rooms[room_r].get("items")
     x.append(item)
+
+
+###########################################################################
+#                         dylans combat stuff                             #
+###########################################################################
+def combat(current_room):
+    enemy = current_room["enemies"][0]
+    print(enemy["intro"])
+    while True:
+        combatturn(enemy)
+        printcombatitems()
+        valid = 0
+        while valid == 0:
+            command = normalise_input(input("What would you like to do?"))
+            if len(command) != 0 and command[0] == "use":
+                for item in inventory:
+                    if item["id"] == command[1] and item !=  item_dmg_gauntlet and item !=  item_armour:
+                        useitem = item
+                        valid = 1
+        print()
+        executecombatcommand(useitem, enemy)
+        if enemy["health"] <= 0:
+            break
+        enemiesattack(enemy)
+        if plrhealth <= 0:
+            gameover()
+        
+
+def combatturn(enemy):
+    print()
+    print("Your health is " + str(plrhealth) + " and the " + enemy["name"] + "'s is " + str(enemy["health"]))
+    print()
+
+def printcombatitems():
+    global inventory
+    for item in inventory:
+        if item !=  item_dmg_gauntlet and item !=  item_armour:
+            print("USE "+item["id"].upper()+" to use "+item["name"])
+    print()
+
+def executecombatcommand(useitem, enemy):
+    global plrhealth
+    global inventory
+    global plrgold
+    if useitem["class"] == "weapon":
+        modifier = 1
+        if item_dmg_gauntlet in inventory:
+            modifier = 1.2
+        damage = round((modifier*(useitem["damage"])), 1)
+        enemy["health"] -= damage
+        if (enemy["health"] <= 0):
+            enemy["health"] = 0
+            print(enemy["death"])
+            current_room["enemies"] = []
+            plrgold += enemy["gold_worth"]
+        else:
+            print("You use " + str(useitem["name"].upper()) + " and deal " + str(damage) + " damage.")
+            print()
+    if useitem["class"] == "heal":
+        plrhealth += useitem["healing"]
+        if plrhealth > 100:
+            plrhealth = 100
+        if useitem["single-use"] == True:
+            inventory.remove(useitem)
+
+def enemiesattack(enemy):
+    global plrhealth
+    damage = ((enemy["base_damage"])*(random.randint(75, 125)/100))
+    if item_armour in inventory:
+        damage = round((damage*0/8), 1)
+    plrhealth -= damage
+    plrhealth = round(plrhealth, 1)
+    if plrhealth <= 0:
+        plrhealth = 0
+    print(enemy["name"] + " attacked and dealt " + str(damage) + " damage.")
+    print()        
+        
+def gameover():
+    print("\nYOU HAVE DIED\n")
+    print('''   _____              __  __   ______      ____   __      __  ______   _____  
+  / ____|     /\     |  \/  | |  ____|    / __ \  \ \    / / |  ____| |  __ \ 
+ | |  __     /  \    | \  / | | |__      | |  | |  \ \  / /  | |__    | |__) |
+ | | |_ |   / /\ \   | |\/| | |  __|     | |  | |   \ \/ /   |  __|   |  _  / 
+ | |__| |  / ____ \  | |  | | | |____    | |__| |    \  /    | |____  | | \ \ 
+  \_____| /_/    \_\ |_|  |_| |______|    \____/      \/     |______| |_|  \_\
+                                                                                  ''')
+
+    timeToGrade(getTimer()) 
+    
+###########################################################################
+
+
     
 # This is the entry point of our program
 def main():
-
     # Spawn items in random rooms
     random_spawn_item(item_hp_ring)
-    random_spawn_item(item_gauntlets)
+    random_spawn_item(item_dmg_gauntlet)
     random_spawn_item(item_armour)
     random_spawn_item(item_potion)
-    #pick a weapon
+    #pick a weapon and starting info
     start()
-
     # Main game loop
     while True:
         #checks to see if anything needs to be changed
         boss_spawn(enemies)
+        #COMBAT
+        if plrhealth == 0:
+            gameover()
+            break
+        if current_room["enemies"]:
+            combat(current_room)
         # Display game status (room description, inventory etc.)
-        print_room_enemies(current_room)
-        #combat(current_room)
+        #print_room_enemies(current_room)
         print_room(current_room)
         print_inventory_items(inventory)
 
