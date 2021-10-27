@@ -25,9 +25,9 @@ leading SOUTH. The Southern door has wires attached to it.""",
 
     "exits": {"north": "S"},
 
-    "enemies": [enemy_goblin_on],
+    "enemies": [],
 
-    "items": [item_bow]
+    "items": []
 }
 
 room_os_boss = {
@@ -40,7 +40,9 @@ the light of the world.""",
 
     "exits": {"north": "S", "south": "BR"},
 
-    "items": [item_bow]
+    "enemies": [],
+
+    "items": []
 }
 
 room_s = {
@@ -54,7 +56,9 @@ light the way.""",
 
     "exits": {"north": "BR","east": "SE","west": "SW","south": "OS"},
 
-    "items": [item_bow]
+    "enemies": [],
+
+    "items": []
 }
 room_sw = {
     "name": "SW",
@@ -65,7 +69,9 @@ are corridors leading away.""",
 
     "exits": {"north": "W","east": "S"},
 
-    "items": [item_bow]
+    "enemies": [],
+
+    "items": []
 }
 room_w = {
     "name": "W",
@@ -79,7 +85,9 @@ can see no further way to continue this direction.""",
 
     "exits": {"north": "NW", "west": "OW", "south": "SW"},
 
-    "items": [item_bow]
+    "enemies": [],
+
+    "items": []
 }
 room_ow = {
     "name": "OW",
@@ -92,7 +100,7 @@ Above the exit you see a sign “All 3, you, they, be free.”""",
 
     "enemies": [enemy_goblin_ow],
 
-    "items": [item_bow]
+    "items": []
 }
 room_nw = {
     "name": "NW",
@@ -103,7 +111,9 @@ EAST and SOUTH are corridors leading away.""",
 
     "exits": {"east": "N","south":"W"},
 
-    "items": [item_bow]
+    "enemies": [],
+
+    "items": []
 }
 room_n = {
     "name": "N",
@@ -116,7 +126,9 @@ grinding gears, you can see no further way to continue this direction.""",
 
     "exits": {"west": "NW","north":"ON","east":"NE"},
 
-    "items": [item_bow]
+    "enemies": [],
+
+    "items": []
 }
 room_on = {
     "name": "ON",
@@ -130,7 +142,7 @@ sign “All 3, you, they, be free.”""",
 
     "enemies": [enemy_goblin_on],
 
-    "items": [item_bow]
+    "items": []
 }
 room_ne = {
     "name": "NE",
@@ -141,7 +153,9 @@ away. A small piece of writing is on the wall…Cake = Lie.""",
 
     "exits": {"south": "E","west":"N"},
 
-    "items": [item_bow]
+    "enemies": [],
+
+    "items": []
 }
 room_e = {
     "name": "E",
@@ -152,7 +166,9 @@ leading SOUTH. The Southern door has wires attached to it.""",
 
     "exits": {"north": "NE","south":"SE","east":"OE"},
 
-    "items": [item_bow]
+    "enemies": [],
+
+    "items": []
 }
 room_oe = {
     "name": "OE",
@@ -166,7 +182,7 @@ Above the exit you see a sign “All 3, you, they, be free.”.""",
 
     "enemies": [enemy_goblin_oe],
 
-    "items": [item_bow]
+    "items": []
 }
 room_se = {
     "name": "SE",
@@ -177,7 +193,9 @@ to the WEST and NORTH are corridors leading away.""",
 
     "exits": {"north": "E","west":"S"},
 
-    "items": [item_bow]
+    "enemies": [],
+
+    "items": []
 }
 room_br = {
     "name": "BR",
@@ -192,7 +210,7 @@ and a light in the distance.""",
 
     "enemies": [enemy_mecha],
 
-    "items": [item_bow]
+    "items": []
 }
 
 

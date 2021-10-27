@@ -9,6 +9,7 @@ import time
 import math
 import playsound
 import threading
+from playsound import *
 
 ##### Timer for score ######## Marcus
 def timeToHurry():
@@ -217,6 +218,7 @@ def execute_go(direction):
     
     if is_valid_exit(current_room["exits"],direction):
        current_room = move(current_room["exits"],direction)
+
     else:
         print("You cannot go there.")
 
