@@ -20,7 +20,7 @@ enemy_goblin_on = {
 
     "death": "As the goblin falls back you here a mechanised cacophony of sound radiating from behind you.",
 
-    "health": 100,
+    "health": 50,
 
     "gold_worth": 10,
 
@@ -49,7 +49,7 @@ enemy_goblin_oe = {
     
     "death": "As the goblin falls back you here a mechanised cacophony of sound radiating from behind you.",
 
-    "health": 100,
+    "health": 50,
 
     "base_damage": 10,
 
@@ -79,7 +79,7 @@ creature lunges at you.""",
 
     "death": "As the goblin falls back you here a mechanised cacophony of sound radiating from behind you.",
 
-    "health": 100,
+    "health": 50,
 
     "base_damage": 10,
 

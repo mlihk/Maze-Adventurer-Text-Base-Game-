@@ -78,11 +78,24 @@ def gradeD(usedTime):
 
 def start():
     global current_room
-    print("“Where is this place?”…")
-    
-    print("""The fall through the chambers ceiling was painful enough, but the daunting moment of
+    print(r"""
+
+======================================================================================================
+______                         _     _       _          _   _             __       _                  
+|  _  \                       | |   (_)     | |        | | | |           / _|     | |                 
+| | | |___  ___  ___ ___ _ __ | |_   _ _ __ | |_ ___   | |_| |__   ___  | |_ _   _| |_ _   _ _ __ ___ 
+| | | / _ \/ __|/ __/ _ \ '_ \| __| | | '_ \| __/ _ \  | __| '_ \ / _ \ |  _| | | | __| | | | '__/ _ \
+| |/ /  __/\__ \ (_|  __/ | | | |_  | | | | | || (_) | | |_| | | |  __/ | | | |_| | |_| |_| | | |  __/
+|___/ \___||___/\___\___|_| |_|\__| |_|_| |_|\__\___/   \__|_| |_|\___| |_|  \__,_|\__|\__,_|_|  \___|
+
+=======================================================================================================
+*** “Where is this place?”…") ***
+=======================================================================================================   
+The fall through the chambers ceiling was painful enough, but the daunting moment of
 realisation that you have now entered an underground structure, matching those you would
-have found in Maps and Mummies from Wizards of the Ghost.""")
+have found in Maps and Mummies from Wizards of the Ghost.
+=======================================================================================================
+""")
 
     while inventory == []:
         exits = []
@@ -132,7 +145,7 @@ def print_room_items(room):
     items = room["items"]
     # Check to see if we have items
     if items:
-        print ("There is "+list_of_items(items)+" here.\n")
+        print ("There is "+list_of_items(items)+" here.")
     
 
 def print_inventory_items(items):
@@ -155,15 +168,16 @@ def print_room(room):
     (use print_room_items() for this)."""
     
     # Display room name
+    #print("=======================================================================================================")
+    print("***", room["name"].upper(),"***")
     print()
-    print(room["name"].upper())
-    print()
+    print("=======================================================================================================")
     # Display room description
     print(room["description"])
-    print()
+    print("=======================================================================================================")
     # Display any items
     print_room_items(room)
-    
+    print("=======================================================================================================")
 
 def exit_leads_to(exits, direction):
     """This function takes a dictionary of exits and a direction (a particular
@@ -389,7 +403,18 @@ def executecombatcommand(useitem, enemy):
         modifier = 1
         if item_dmg_gauntlet in inventory:
             modifier = 1.2
-        damage = round((modifier*(useitem["damage"])), 1)
+
+        roll_list = []
+        count = useitem["damage_dice"]      # Random damage based on dice throws
+        rand_dmg = 0
+        while count > 0:
+            roll = random.randint(1,useitem["damage_dice"]+1)
+            roll_list.append(roll)
+            rand_dmg = rand_dmg + roll
+            count = count - 1
+
+        print("You rolled:", str(roll_list)[1:-1])
+        damage = round((modifier*(rand_dmg)), 1)
         enemy["health"] -= damage
         if (enemy["health"] <= 0):
             enemy["health"] = 0

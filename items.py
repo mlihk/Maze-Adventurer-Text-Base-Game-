@@ -1,3 +1,9 @@
+import random
+
+
+
+
+
 item_bow = {
 
     "name": "sturdy bow",
@@ -18,7 +24,9 @@ item_bow = {
     "description":
     """A Short bow made of Elm; it comes with a quiver of at least 5 arrows.""",
 
-    "damage": 10
+    "damage_dice": 3,
+    
+    "damage": 4
 }
 
 item_staff = {
@@ -38,8 +46,8 @@ item_staff = {
 
     "description":
     """A two metre tall Staff of alder, it has a shiny gem on top…If only you could choose rogue.""",
-
-    "damage": 10
+    
+    "damage": random.randint(1,20)            
 }
 
 item_sword = {
@@ -56,8 +64,8 @@ O|===|* >________________>
 
     "description":
     """An 80cm long blade and hilt, accompanied by a beautiful scabbard.""",
-
-    "damage": 10
+    
+    "damage": 5
 }
 
 item_hp_ring = {
