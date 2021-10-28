@@ -73,6 +73,16 @@ item_hp_ring = {
 
     "id": "ring",
 
+    "ASCII": r"""  '   ,'\  
+ /   /   | 
+.   ; ,. : 
+'   | |: : 
+'   | .; : 
+|   :    | 
+ \   \  /  
+  `----'  """, 
+
+
     "description":
     "ring that heals",
 
@@ -111,6 +121,11 @@ item_potion = {
     "quantity": 1,
 
     "id": "potion",
+
+    "ASCII": r"""  |~|
+  | |
+.'   `.
+`.___.'""",
 
     "description":
     "Fully replenishes health",

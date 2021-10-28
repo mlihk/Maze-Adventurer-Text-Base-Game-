@@ -97,11 +97,13 @@ have found in Maps and Mummies from Wizards of the Ghost.
 =======================================================================================================
 """)
 
-    while inventory == []:
+    while True:
         exits = []
         print_room(current_room)
         command = menu(exits, current_room["items"], inventory)
         execute_command(command)
+        if (item_bow or item_sword or item_staff) in inventory:
+            break
     for item in inventory:
         print()
         print(item["ASCII"])
