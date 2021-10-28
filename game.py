@@ -109,8 +109,6 @@ have found in Maps and Mummies from Wizards of the Ghost.
 
 
 def list_of_items(items):
-    """This function takes a list of items (see items.py for the definition) and
-    returns a comma-separated list of item names (as a string)."""
     
     stringList = ""
     
@@ -136,11 +134,6 @@ def print_room_enemies(room):
     
 
 def print_room_items(room):
-    """This function takes a room as an input and nicely displays a list of items
-    found in this room (followed by a blank line). If there are no items in
-    the room, nothing is printed. See map.py for the definition of a room, and
-    items.py for the definition of an item. This function uses list_of_items()
-    to produce a comma-separated list of item names."""
     
     items = room["items"]
     # Check to see if we have items
@@ -149,9 +142,6 @@ def print_room_items(room):
     
 
 def print_inventory_items(items):
-    """This function takes a list of inventory items and displays it nicely, in a
-    manner similar to print_room_items(). The only difference is in formatting:
-    print "You have ..." instead of "There is ... here."."""
     
     # Check to see if we have items
     if items:
@@ -159,13 +149,6 @@ def print_inventory_items(items):
 
 
 def print_room(room):
-    """This function takes a room as an input and nicely displays its name
-    and description. The room argument is a dictionary with entries "name",
-    "description" etc. (see map.py for the definition). The name of the room
-    is printed in all capitals and framed by blank lines. Then follows the
-    description of the room and a blank line again. If there are any items
-    in the room, the list of items is printed next followed by a blank line
-    (use print_room_items() for this)."""
     
     # Display room name
     #print("=======================================================================================================")
@@ -180,17 +163,11 @@ def print_room(room):
     print("=======================================================================================================")
 
 def exit_leads_to(exits, direction):
-    """This function takes a dictionary of exits and a direction (a particular
-    exit taken from this dictionary). It returns the name of the room into which
-    this exit leads."""
     
     return rooms[exits[direction]]["name"]
 
 
 def print_exit(direction, leads_to):
-    """This function prints a line of a menu of exits. It takes a direction (the
-    name of an exit) and the name of the room into which it leads (leads_to),
-    and should print a menu line"""
     
     print("GO " + direction.upper() + " to " + leads_to + ".")
 
@@ -200,14 +177,6 @@ def boss_spawn(enemies): #check if all enemies are dead, opens boss doors
         rooms["S"] = rooms["BossS"]
 
 def print_menu(exits, room_items, inv_items):
-    """This function displays the menu of available actions to the player. The
-    argument exits is a dictionary of exits as exemplified in map.py. The
-    arguments room_items and inv_items are the items lying around in the room
-    and carried by the player respectively. The menu should, for each exit,
-    call the function print_exit() to print the information about each exit in
-    the appropriate format. The room into which an exit leads is obtained
-    using the function exit_leads_to(). Then, it should print a list of commands
-    related to items"""
     
     print("You can:")
     # Iterate over available exits
@@ -224,20 +193,11 @@ def print_menu(exits, room_items, inv_items):
 
 
 def is_valid_exit(exits, chosen_exit):
-    """This function checks, given a dictionary "exits" (see map.py) and
-    a players's choice "chosen_exit" whether the player has chosen a valid exit.
-    It returns True if the exit is valid, and False otherwise. Assume that
-    the name of the exit has been normalised by the function normalise_input()."""
     
     return chosen_exit in exits
 
 
 def execute_go(direction):
-    """This function, given the direction (e.g. "south") updates the current room
-    to reflect the movement of the player if the direction is a valid exit
-    (and prints the name of the room into which the player is
-    moving). Otherwise, it prints "You cannot go there."
-    """
     
     global current_room
     
@@ -249,11 +209,6 @@ def execute_go(direction):
 
 
 def execute_take(item_id):
-    """This function takes an item_id as an argument and moves this item from the
-    list of items in the current room to the player's inventory. However, if
-    there is no such item in the room, this function prints
-    "You cannot take that."
-    """
     
     global current_room
     global inventory
@@ -269,10 +224,6 @@ def execute_take(item_id):
         print("You cannot take that.")
 
 def execute_drop(item_id):
-    """This function takes an item_id as an argument and moves this item from the
-    player's inventory to list of items in the current room. However, if there is
-    no such item in the inventory, this function prints "You cannot drop that."
-    """
     
     global current_room
     global inventory
@@ -289,12 +240,6 @@ def execute_drop(item_id):
     
 
 def execute_command(command):
-    """This function takes a command (a list of words as returned by
-    normalise_input) and, depending on the type of action (the first word of
-    the command: "go", "take", or "drop"), executes either execute_go,
-    execute_take, or execute_drop, supplying the second word as the argument.
-
-    """
 
     if 0 == len(command):
         return
@@ -322,13 +267,6 @@ def execute_command(command):
 
 
 def menu(exits, room_items, inv_items):
-    """This function, given a dictionary of possible exits from a room, and a list
-    of items found in the room and carried by the player, prints the menu of
-    actions using print_menu() function. It then prompts the player to type an
-    action. The players's input is normalised using the normalise_input()
-    function before being returned.
-
-    """
 
     # Display menu
     print_menu(exits, room_items, inv_items)
@@ -343,9 +281,6 @@ def menu(exits, room_items, inv_items):
 
 
 def move(exits, direction):
-    """This function returns the room into which the player will move if, from a
-    dictionary "exits" of avaiable exits, they choose to move towards the exit
-    with the name given by "direction"."""
 
     # Next room to go to
     return rooms[exits[direction]]
