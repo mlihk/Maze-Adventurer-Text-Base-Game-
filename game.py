@@ -363,7 +363,7 @@ def random_spawn_item(item):    # This is run before the game starts to spawn it
 def combat(current_room):
     enemy = current_room["enemies"][0]
     print(enemy["intro"])
-    print(enemy["
+    print(enemy["ASCII"])
     while True:
         combatturn(enemy)
         printcombatitems()
