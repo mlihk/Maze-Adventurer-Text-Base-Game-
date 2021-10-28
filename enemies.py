@@ -129,7 +129,7 @@ mass of metal and destruction falls back against the rear wall, conveniently cat
 
     "health": 100,
 
-    "base_damage": 8,
+    "base_damage": 12,
 
     "gold_worth": 50,
 

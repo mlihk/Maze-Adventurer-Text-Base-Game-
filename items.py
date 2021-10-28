@@ -130,7 +130,7 @@ item_potion = {
     "description":
     "Fully replenishes health",
 
-    "healing": 100,
+    "healing": 30,
 
     "single-use": True    
 }

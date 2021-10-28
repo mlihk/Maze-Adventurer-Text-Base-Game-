@@ -179,8 +179,36 @@ def boss_spawn(enemies): #check if all enemies are dead, opens boss doors
     if (enemy_goblin_on["health"] <= 0 and enemy_goblin_oe["health"] <= 0 and enemy_goblin_ow["health"] <= 0):
         rooms["OS"] = rooms["BossOS"]
         rooms["S"] = rooms["BossS"]
-def win(enemies):
+def win(enemies):                               # When you kill mecha kirill you win the game
     if enemy_mecha["health"] <= 0:
+        print("=======================================================================================================")
+        print(r"""
+ _   _ _      _                     _   _   _  
+| | | (_)    | |                   | | | | | | 
+| | | |_  ___| |_ ___  _ __ _   _  | | | | | | 
+| | | | |/ __| __/ _ \| '__| | | | | | | | | | 
+\ \_/ / | (__| || (_) | |  | |_| | |_| |_| |_| 
+ \___/|_|\___|\__\___/|_|   \__, | (_) (_) (_) 
+                             __/ |             
+                            |___/
+
+__   __            _                           _       __           _           _  
+\ \ / /           | |                         | |     / _|         | |         | | 
+ \ V /___  _   _  | |__   __ ___   _____    __| | ___| |_ ___  __ _| |_ ___  __| | 
+  \ // _ \| | | | | '_ \ / _` \ \ / / _ \  / _` |/ _ \  _/ _ \/ _` | __/ _ \/ _` | 
+  | | (_) | |_| | | | | | (_| |\ V /  __/ | (_| |  __/ ||  __/ (_| | ||  __/ (_| | 
+  \_/\___/ \__,_| |_| |_|\__,_| \_/ \___|  \__,_|\___|_| \___|\__,_|\__\___|\__,_| 
+                                                                                   
+                                                                                   
+___  ___ _____ _____  _   _   ___         _   _____________ _____ _      _         
+|  \/  ||  ___/  __ \| | | | / _ \       | | / /_   _| ___ \_   _| |    | |        
+| .  . || |__ | /  \/| |_| |/ /_\ \______| |/ /  | | | |_/ / | | | |    | |        
+| |\/| ||  __|| |    |  _  ||  _  |______|    \  | | |    /  | | | |    | |        
+| |  | || |___| \__/\| | | || | | |      | |\  \_| |_| |\ \ _| |_| |____| |____    
+\_|  |_/\____/ \____/\_| |_/\_| |_/      \_| \_/\___/\_| \_|\___/\_____/\_____/    
+                                                                                   
+                                                                                   """)
+
         timeToGrade(getTimer())        
 '''
 def alive_change(enemies):
@@ -440,10 +468,8 @@ def gameover():
 # This is the entry point of our program
 def main():
     # Spawn items in random rooms
-    random_spawn_item(item_hp_ring)
     random_spawn_item(item_dmg_gauntlet)
     random_spawn_item(item_armour)
-    random_spawn_item(item_potion)
     #pick a weapon and starting info
     start()
     # Main game loop
