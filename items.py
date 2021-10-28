@@ -1,9 +1,3 @@
-import random
-
-
-
-
-
 item_bow = {
 
     "name": "sturdy bow",
