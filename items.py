@@ -15,6 +15,8 @@ item_bow = {
     /
    (""",
 
+    "sound": "player_bow_attack.wav",
+
     "description":
     """A Short bow made of Elm; it comes with a quiver of at least 5 arrows.""",
 
@@ -36,7 +38,8 @@ item_staff = {
    |  .:''    
    |    
    |        
-   |  """, 
+   |  """,
+    "sound": "player_staff_attack.wav",
 
     "description":
     """A two metre tall Staff of alder, it has a shiny gem on top…If only you could choose rogue.""",
@@ -57,6 +60,8 @@ item_sword = {
     "ASCII": r"""      /| ________________
 O|===|* >________________>
       \|""",
+
+    "sound": "player_sword_attack.wav",
 
     "description":
     """An 80cm long blade and hilt, accompanied by a beautiful scabbard.""",

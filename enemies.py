@@ -18,9 +18,11 @@ enemy_goblin_on = {
        (`    \      /    `)    
        |      '----'      |""",
 
+    "sound": "goblin-14.wav",
+
     "death": "As the goblin falls back you here a mechanised cacophony of sound radiating from behind you.",
 
-    "health": 30,
+    "health": 0,
 
     "gold_worth": 10,
 
@@ -46,10 +48,12 @@ enemy_goblin_oe = {
          ___\ \|--|/ /___
        (`    \      /    `)    
        |      '----'      |""",
+
+    "sound": "goblin-14.wav",
     
     "death": "As the goblin falls back you here a mechanised cacophony of sound radiating from behind you.",
 
-    "health": 30,
+    "health": 0,
 
     "base_damage": 5,
 
@@ -77,9 +81,11 @@ creature lunges at you.""",
        (`    \      /    `)    
        |      '----'      |""",
 
+    "sound": "goblin-14.wav",
+
     "death": "As the goblin falls back you here a mechanised cacophony of sound radiating from behind you.",
 
-    "health": 30,
+    "health": 0,
 
     "base_damage": 5,
 
@@ -121,6 +127,8 @@ new era of tyranny, for I am MECHAKIRILL""",
               |/~~~\|  |/~~~\|
               /|___|\  /|___|\
              <_______><_______>""",
+
+    "sound": "kirill_evil_laugh.mp3",
 
 
     "death": """As little pops are heard of transistors and electronics breaking inside the looming structure, the hulking
