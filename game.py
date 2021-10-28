@@ -12,6 +12,8 @@ import threading
 import sys
 from playsound import *
 import random
+from threading import Timer
+
 
 ##### Timer for score ######## Marcus
 def timeToHurry():
@@ -363,20 +365,15 @@ def random_spawn_item(item):    # This is run before the game starts to spawn it
 def combat(current_room):
     enemy = current_room["enemies"][0]
     print(enemy["intro"])
-    print(enemy["ASCII"])
+    #print(enemy["ASCII"])
     while True:
         combatturn(enemy)
-        printcombatitems()
         valid = 0
-        while valid == 0:
-            command = normalise_input(input("What would you like to do?"))
-            if len(command) != 0 and command[0] == "use":
-                for item in inventory:
-                    if item["id"] == command[1] and item !=  item_dmg_gauntlet and item !=  item_armour:
-                        useitem = item
-                        valid = 1
-        print()
-        executecombatcommand(useitem, enemy)
+        if enemy != enemy_mecha:
+            printcombatitems()
+            attack()
+        else:
+            kirillcombat()
         if enemy["health"] <= 0:
             break
         enemiesattack(enemy)
@@ -389,6 +386,18 @@ def combatturn(enemy):
     print("Your health is " + str(plrhealth) + " and the " + enemy["name"] + "'s is " + str(enemy["health"]))
     print()
 
+def attack(enemy):
+    valid = 0
+    while valid == 0:
+        command = normalise_input(input("What would you like to do?"))
+        if len(command) != 0 and command[0] == "use":
+            for item in inventory:
+                if item["id"] == command[1] and item !=  item_dmg_gauntlet and item !=  item_armour:
+                    useitem = item
+                    valid = 1
+    print()
+    executecombatcommand(useitem, enemy)
+    
 def printcombatitems():
     global inventory
     for item in inventory:
@@ -437,12 +446,42 @@ def enemiesattack(enemy):
     damage = ((enemy["base_damage"])*(random.randint(75, 125)/100))
     if item_armour in inventory:
         damage = round((damage*0.8), 1)
+    else:
+        damage = round(damage, 1)
     plrhealth -= damage
     plrhealth = round(plrhealth, 1)
     if plrhealth <= 0:
         plrhealth = 0
     print(enemy["name"] + " attacked and dealt " + str(damage) + " damage.")
-    print()        
+    print()
+
+def kirillcombat():
+    number = random.randint(0, 15)
+    ans1 = bin(number)
+    ans = ans1[2:6]
+    print(ans)
+    def timer():
+        global timekirill
+        timekirill = False
+    global timekirill
+    timekirill = True
+    t1 = Timer(15.0, timer)
+    t1.start()
+    
+    while timekirill == True:
+        answer = 9999
+        answer = input("You Have 15 seconds! Convert " + str(number) + " to binary:")
+        print(timekirill)
+        timekirill = False
+
+    if answer == ans:
+        print("Well done! ATTACK!")
+        printcombatitems()
+        attack(enemy_mecha)
+    elif answer == 9999:
+        print("You took too long!")
+    else:
+        print("Wrong answer! Hard luck.")
         
 def gameover():
     print("\nYOU HAVE DIED\n")
