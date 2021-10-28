@@ -25,7 +25,8 @@ startingTimer = time.time() #constant please do not touch
  
 def getTimer(): #use to get the time taken to finish the game
     usedTime = time.time() - startingTimer
-    print(usedTime)
+    print()
+    #print(usedTime)
     return usedTime
  
 def timeToGrade(usedTime): # converts the time into a grade
@@ -102,7 +103,7 @@ have found in Maps and Mummies from Wizards of the Ghost.
         print_room(current_room)
         command = menu(exits, current_room["items"], inventory)
         execute_command(command)
-        if (item_bow or item_sword or item_staff) in inventory:
+        if item_bow in inventory or item_sword in inventory or item_staff in inventory:
             break
     for item in inventory:
         print()
@@ -172,12 +173,26 @@ def exit_leads_to(exits, direction):
 def print_exit(direction, leads_to):
     
     print("GO " + direction.upper() + " to " + leads_to + ".")
-
+#Checks if all goblins are dead
 def boss_spawn(enemies): #check if all enemies are dead, opens boss doors
-    if (enemy_goblin_on["alive"] == False and enemy_goblin_oe["alive"] == False and enemy_goblin_ow["alive"] == False):
+    #if (enemy_goblin_on["alive"] == False and enemy_goblin_oe["alive"] == False and enemy_goblin_ow["alive"] == False):
+    if (enemy_goblin_on["health"] <= 0 and enemy_goblin_oe["health"] <= 0 and enemy_goblin_ow["health"] <= 0):
         rooms["OS"] = rooms["BossOS"]
         rooms["S"] = rooms["BossS"]
-
+def win(enemies):
+    if enemy_mecha["health"] <= 0:
+        timeToGrade(getTimer())        
+'''
+def alive_change(enemies):
+    if enemy_goblin_on["health"] == 0:
+        enemy_goblin_on["alive"] = False
+            
+    if enemy_goblin_oe["health"] == 0:
+        enemy_goblin_oe["alive"] = False
+            
+    if enemy_goblin_ow["health"] == 0:
+        enemy_goblin_ow["alive"] = False
+'''
 def print_menu(exits, room_items, inv_items):
     
     print("You can:")
@@ -382,7 +397,6 @@ def enemiesattack(enemy):
     print()        
         
 def gameover():
-    print("\nYOU HAVE DIED\n")
     print('''   _____              __  __   ______      ____   __      __  ______   _____  
   / ____|     /\     |  \/  | |  ____|    / __ \  \ \    / / |  ____| |  __ \ 
  | |  __     /  \    | \  / | | |__      | |  | |  \ \  / /  | |__    | |__) |
@@ -391,7 +405,11 @@ def gameover():
   \_____| /_/    \_\ |_|  |_| |______|    \____/      \/     |______| |_|  \_\
                                                                                   ''')
 
-    timeToGrade(getTimer()) 
+    usedTime = time.time() - startingTimer
+    print()
+    print('Time used: ', math.floor(usedTime),'seconds')
+    print('You died...')
+    sys.exit()
     
 ###########################################################################
 
@@ -416,6 +434,7 @@ def main():
             break
         if current_room["enemies"]:
             combat(current_room)
+            win(enemies)
         # Display game status (room description, inventory etc.)
         #print_room_enemies(current_room)
         print_room(current_room)

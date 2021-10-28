@@ -97,6 +97,32 @@ compact construct with a small head inside. The eyes begin to stare at you, as t
 lifting two cannons on each arm and standing over 9 feet tall. “Computers are the future, the world will meet a
 new era of tyranny, for I am MECHAKIRILL""",
 
+    "ASCII": r"""
+          |_|_|
+          |_|_|              _____
+          |_|_|     ____    |*_*_*|
+ _______   _\__\___/ __ \____|_|_   _______
+/ ____  |=|      \  <_+>  /      |=|  ____ \
+~|    |\|=|======\\______//======|=|/|    |~
+ |_   |    \      |      |      /    |    |
+  \==-|     \     |      |     /     |----|~~/
+  |   |      |    |      |    |      |____/~/
+  |   |       \____\____/____/      /    / /
+  |   |         {----------}       /____/ /
+  |___|        /~~~~~~~~~~~~\     |_/~|_|/
+   \_/        |/~~~~~||~~~~~\|     /__|\
+   | |         |    ||||    |     (/|| \)
+   | |        /     |  |     \       \\
+   |_|        |     |  |     |
+              |_____|  |_____|
+              (_____)  (_____)
+              |     |  |     |
+              |     |  |     |
+              |/~~~\|  |/~~~\|
+              /|___|\  /|___|\
+             <_______><_______>""",
+
+
     "death": """As little pops are heard of transistors and electronics breaking inside the looming structure, the hulking
 mass of metal and destruction falls back against the rear wall, conveniently catching the exit button, which now lights green.
 “Yoouu…ffaaaiillllll”, all signs of what could be considered life, are no-longer considered.""",
