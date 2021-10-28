@@ -363,6 +363,7 @@ def random_spawn_item(item):    # This is run before the game starts to spawn it
 def combat(current_room):
     enemy = current_room["enemies"][0]
     print(enemy["intro"])
+    print(enemy["
     while True:
         combatturn(enemy)
         printcombatitems()
@@ -435,7 +436,7 @@ def enemiesattack(enemy):
     global plrhealth
     damage = ((enemy["base_damage"])*(random.randint(75, 125)/100))
     if item_armour in inventory:
-        damage = round((damage*0/8), 1)
+        damage = round((damage*0.8), 1)
     plrhealth -= damage
     plrhealth = round(plrhealth, 1)
     if plrhealth <= 0:
