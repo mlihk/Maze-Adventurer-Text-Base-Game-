@@ -56,7 +56,7 @@ def gradeS(usedTime):
     print('Time used: ', math.floor(usedTime))
     print('Grade equivilant: S')
     print('unknown voice: Well done! You have shown an amazing performance that no one has ever done!')
-    #sound_victory_music()
+    playsound("victory.wav")
     sys.exit()
  
 def gradeA(usedTime):
@@ -259,6 +259,8 @@ def execute_go(direction):
     if is_valid_exit(current_room["exits"],direction):
        current_room = move(current_room["exits"],direction)
        decrease_score()
+       playsound("wooden_door_open.wav")
+
 
     else:
         print("You cannot go there.")
@@ -276,6 +278,7 @@ def execute_take(item_id):
             inventory.append(item)
             foundItem = True
             decrease_score()
+            playsound("gold_pickup.wav")
     
     if not foundItem:
         print("You cannot take that.")
@@ -292,7 +295,7 @@ def execute_drop(item_id):
             current_room["items"].append(item)
             foundItem = True
             decrease_score()
-    
+            playsound("gold_pickup.wav")
     if not foundItem:
         print("You cannot drop that.")
     
@@ -355,6 +358,7 @@ def random_spawn_item(item):    # This is run before the game starts to spawn it
 ###########################################################################
 def combat(current_room):
     enemy = current_room["enemies"][0]
+    playsound(enemy["sound"])
     print(r"""
 
 =======================================================================================================
@@ -424,11 +428,22 @@ def executecombatcommand(useitem, enemy):
         decrease_score()
         damage = round((modifier*(rand_dmg)), 1)
         enemy["health"] -= damage
+        
+        if item_bow in inventory:
+            playsound("player_bow_attack.wav")
+        if item_sword in inventory:
+            playsound("player_sword_attack.wav")
+        if item_staff in inventory:
+            playsound("player_staff_attack.wav")
+
+        playsound("player_grunt.wav")
+            
         if (enemy["health"] <= 0):
             enemy["health"] = 0
             print(enemy["death"])
             current_room["enemies"] = []
             plrgold += enemy["gold_worth"]
+            playsound("gold_pickup.wav")
         else:
             print("You use " + str(useitem["name"].upper()) + " and deal " + str(damage) + " damage.")
             print()
