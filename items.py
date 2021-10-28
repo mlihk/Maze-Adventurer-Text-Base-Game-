@@ -39,7 +39,7 @@ item_staff = {
    |    
    |        
    |  """,
-    "sound": "player_staff_attack.wav",
+    "sound": "player_staff_attack.mp3",
 
     "description":
     """A two metre tall Staff of alder, it has a shiny gem on top…If only you could choose rogue.""",

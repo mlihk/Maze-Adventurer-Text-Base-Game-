@@ -128,7 +128,7 @@ new era of tyranny, for I am MECHAKIRILL""",
               /|___|\  /|___|\
              <_______><_______>""",
 
-    "sound": "kirill_evil_laugh.wav",
+    "sound": "kirill_evil_laugh.mp3",
 
 
     "death": """As little pops are heard of transistors and electronics breaking inside the looming structure, the hulking

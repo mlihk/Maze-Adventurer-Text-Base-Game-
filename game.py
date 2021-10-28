@@ -434,7 +434,7 @@ def executecombatcommand(useitem, enemy):
         if item_sword in inventory:
             playsound("player_sword_attack.wav")
         if item_staff in inventory:
-            playsound("player_staff_attack.wav")
+            playsound("player_staff_attack.mp3")
 
         playsound("player_grunt.wav")
             
