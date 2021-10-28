@@ -13,6 +13,14 @@ import sys
 from playsound import *
 import random
 
+##### Score that decrease as you do more things #####
+score = 200
+
+def decrease_score():
+    global score
+    score = score - 1 
+
+
 ##### Timer for score ######## Marcus
 def timeToHurry():
     print('unknown voice: 3 minutes has passed, quick or we are all dead!')
@@ -30,6 +38,7 @@ def getTimer(): #use to get the time taken to finish the game
     return usedTime
  
 def timeToGrade(usedTime): # converts the time into a grade
+    print("Your score is:",score)
     if usedTime <= 60:
         gradeS(usedTime)
         return
@@ -109,7 +118,7 @@ have found in Maps and Mummies from Wizards of the Ghost.""")
         print()
         print(item["ASCII"])
     current_room = rooms["OS"]
-
+    decrease_score()
 
 def list_of_items(items):
     
@@ -209,7 +218,8 @@ ___  ___ _____ _____  _   _   ___         _   _____________ _____ _      _
                                                                                    
                                                                                    """)
 
-        timeToGrade(getTimer())        
+        timeToGrade(getTimer())
+
 '''
 def alive_change(enemies):
     if enemy_goblin_on["health"] == 0:
@@ -235,7 +245,7 @@ def print_menu(exits, room_items, inv_items):
     for item in inv_items:
         print("DROP "+item["id"].upper()+" to drop "+item["name"])
     print("What do you want to do?")
-
+    
 
 def is_valid_exit(exits, chosen_exit):
     
@@ -248,6 +258,7 @@ def execute_go(direction):
     
     if is_valid_exit(current_room["exits"],direction):
        current_room = move(current_room["exits"],direction)
+       decrease_score()
 
     else:
         print("You cannot go there.")
@@ -264,6 +275,7 @@ def execute_take(item_id):
             current_room["items"].remove(item)
             inventory.append(item)
             foundItem = True
+            decrease_score()
     
     if not foundItem:
         print("You cannot take that.")
@@ -279,6 +291,7 @@ def execute_drop(item_id):
             inventory.remove(item)
             current_room["items"].append(item)
             foundItem = True
+            decrease_score()
     
     if not foundItem:
         print("You cannot drop that.")
@@ -408,6 +421,7 @@ def executecombatcommand(useitem, enemy):
 
         print("=======================================================================================================")
         print("You rolled:", str(roll_list)[1:-1])
+        decrease_score()
         damage = round((modifier*(rand_dmg)), 1)
         enemy["health"] -= damage
         if (enemy["health"] <= 0):

@@ -127,9 +127,9 @@ new era of tyranny, for I am MECHAKIRILL""",
 mass of metal and destruction falls back against the rear wall, conveniently catching the exit button, which now lights green.
 “Yoouu…ffaaaiillllll”, all signs of what could be considered life, are no-longer considered.""",
 
-    "health": 100,
+    "health": 80,
 
-    "base_damage": 12,
+    "base_damage": 10,
 
     "gold_worth": 50,
 
