@@ -1,3 +1,9 @@
+import random
+
+
+
+
+
 item_bow = {
 
     "name": "sturdy bow",
@@ -7,12 +13,12 @@ item_bow = {
     "id": "bow",
 
     "ASCII":
-    r"""   (
-    \
+    """   (
+    )
      )
 ##-------->        
      )
-    /
+    )
    (""",
 
     "description":
@@ -40,10 +46,8 @@ item_staff = {
 
     "description":
     """A two metre tall Staff of alder, it has a shiny gem on top…If only you could choose rogue.""",
-
-    "damage_dice": 1,
     
-    "damage": 12           
+    "damage": random.randint(1,20)            
 }
 
 item_sword = {
@@ -54,16 +58,14 @@ item_sword = {
 
     "id": "sword",
 
-    "ASCII": r"""      /| ________________
+    "ASCII": """      /| ________________
 O|===|* >________________>
       \|""",
 
     "description":
     """An 80cm long blade and hilt, accompanied by a beautiful scabbard.""",
-
-    "damage_dice": 2,
     
-    "damage": 6
+    "damage": 5
 }
 
 item_hp_ring = {

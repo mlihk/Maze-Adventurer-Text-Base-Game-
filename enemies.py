@@ -20,11 +20,11 @@ enemy_goblin_on = {
 
     "death": "As the goblin falls back you here a mechanised cacophony of sound radiating from behind you.",
 
-    "health": 30,
+    "health": 50,
 
     "gold_worth": 10,
 
-    "base_damage": 5,
+    "base_damage": 10,
 
     "alive": True
 }
@@ -49,9 +49,9 @@ enemy_goblin_oe = {
     
     "death": "As the goblin falls back you here a mechanised cacophony of sound radiating from behind you.",
 
-    "health": 30,
+    "health": 50,
 
-    "base_damage": 5,
+    "base_damage": 10,
 
     "gold_worth": 10,
 
@@ -79,9 +79,9 @@ creature lunges at you.""",
 
     "death": "As the goblin falls back you here a mechanised cacophony of sound radiating from behind you.",
 
-    "health": 30,
+    "health": 50,
 
-    "base_damage": 5,
+    "base_damage": 10,
 
     "gold_worth": 10,
 
@@ -103,7 +103,7 @@ mass of metal and destruction falls back against the rear wall, conveniently cat
 
     "health": 100,
 
-    "base_damage": 8,
+    "base_damage": 30,
 
     "gold_worth": 50,
 

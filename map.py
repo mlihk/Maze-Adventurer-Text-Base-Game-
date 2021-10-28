@@ -25,7 +25,7 @@ leading SOUTH. The Southern door has wires attached to it.""",
 
     "exits": {"north": "S"},
 
-    "enemies": [enemy_goblin_ow],
+    "enemies": [enemy_mecha],
 
     "items": []
 }
