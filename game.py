@@ -408,7 +408,7 @@ def executecombatcommand(useitem, enemy):
         count = useitem["damage_dice"]      # Random damage based on dice throws
         rand_dmg = 0
         while count > 0:
-            roll = random.randint(1,useitem["damage_dice"]+1)
+            roll = random.randint(1,useitem["damage"]+1)
             roll_list.append(roll)
             rand_dmg = rand_dmg + roll
             count = count - 1

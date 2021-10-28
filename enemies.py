@@ -81,7 +81,7 @@ creature lunges at you.""",
 
     "health": 50,
 
-    "base_damage": 10,
+    "base_damage": 5,
 
     "gold_worth": 10,
 
