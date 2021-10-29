@@ -1,6 +1,6 @@
 item_bow = {
 
-    "name": "sturdy bow",
+    "name": "sturdy bow (deals 3d4)",
 
     "class": "weapon",
 
@@ -27,7 +27,7 @@ item_bow = {
 
 item_staff = {
 
-    "name": "magical staff",
+    "name": "magical staff (deals 1d12)",
 
     "class": "weapon",
 
@@ -51,7 +51,7 @@ item_staff = {
 
 item_sword = {
 
-    "name": "rusty sword",
+    "name": "rusty sword (deals 2d6)",
 
     "class": "weapon",
 
@@ -72,7 +72,7 @@ O|===|* >________________>
 }
 
 item_hp_ring = {
-    "name": "healing ring",
+    "name": "healing ring (heals 10hp - unlimited)",
 
     "class": "heal",
 
@@ -97,7 +97,7 @@ item_hp_ring = {
 }
 
 item_dmg_gauntlet = {
-    "name": "damage gauntlets",
+    "name": "damage gauntlets (+25% damage)",
 
     "class": "modifier",
 
@@ -108,7 +108,7 @@ item_dmg_gauntlet = {
 }
 
 item_armour = {
-    "name": "heavy armour",
+    "name": "heavy armour (+25% defence)",
 
     "class": "modifier",
 
@@ -119,7 +119,7 @@ item_armour = {
 }
 
 item_potion = {
-    "name": "healing potion",
+    "name": "healing potion (heals 30hp - single use)",
 
     "class": "heal",
 

@@ -100,7 +100,7 @@ def start():
                                                                       __/ |                       
                                                                      |___/                        
 =======================================================================================================
-*** “Where is this place?”…") ***
+                                *** “Where is this place?”…") ***
 =======================================================================================================   
 The fall through the chambers ceiling was painful enough, but the daunting moment of
 realisation that you have now entered an underground structure, matching those you would
@@ -372,6 +372,8 @@ def combat(current_room):
 =======================================================================================================""")
     print(enemy["intro"])
     print("=======================================================================================================")
+    print("                              ***","Your ring appears to glow!","***")
+    print("=======================================================================================================")
     print(enemy["ASCII"])
     while True:
         combatturn(enemy)
@@ -387,6 +389,8 @@ def combat(current_room):
         print()
         executecombatcommand(useitem, enemy)
         if enemy["health"] <= 0:
+            print("=======================================================================================================")
+            print("                            ***","Your ring has stopped glowing!","***")
             break
         enemiesattack(enemy)
         if plrhealth <= 0:

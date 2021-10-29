@@ -6,7 +6,7 @@ room_start = {
 
     "description": """In front you see a SWORD, a BOW and a STAFF, before the room opens to a corridor dark,
 and foreboding. To your rear, you see a large door, with a strangely out of place set of wires
-running into it, the switch must be somewhere!""",
+running into it, the switch must be somewhere! You can only carry one weapon!""",
 
     "exits": {},
 
