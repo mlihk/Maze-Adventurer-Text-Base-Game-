@@ -13,7 +13,8 @@ import sys
 from playsound import *
 import random
 from threading import Timer
-
+from threading import Thread
+import signal
 
 ##### Timer for score ######## Marcus
 def timeToHurry():
@@ -459,21 +460,35 @@ def kirillcombat():
     number = random.randint(0, 15)
     ans1 = bin(number)
     ans = ans1[2:6]
-    print(ans)
+    
+    global answer
+    global done
+    done = False
+    answer = 9999    
+
     def timer():
-        global timekirill
-        timekirill = False
-    global timekirill
-    timekirill = True
-    t1 = Timer(15.0, timer)
+        global done
+        running = True
+        while running == True:
+            def inputa():
+                global done
+                global answer
+                answer = input("You Have 15 seconds! Convert " + str(number) + " to binary:")
+                done = True
+            t2 = threading.Thread(target=inputa)
+            t2.daemon = True
+            t2.start()
+            time.sleep(15)
+            running = False
+        done = True
+
+    t1 = threading.Thread(target=timer)
     t1.start()
     
-    while timekirill == True:
-        answer = 9999
-        answer = input("You Have 15 seconds! Convert " + str(number) + " to binary:")
-        print(timekirill)
-        timekirill = False
-
+    
+    while done == False:
+        nothing = True
+        
     if answer == ans:
         print("Well done! ATTACK!")
         printcombatitems()
