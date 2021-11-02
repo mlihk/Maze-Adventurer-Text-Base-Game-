@@ -101,7 +101,7 @@ enemy_mecha = {
     """As you walk into the room, you can see a huge button displaying exit lit up in red. Underneath, is a small
 compact construct with a small head inside. The eyes begin to stare at you, as the construct slowly begins to rise,
 lifting two cannons on each arm and standing over 9 feet tall. “Computers are the future, the world will meet a
-new era of tyranny, for I am MECHAKIRILL""",
+new era of tyranny, for I am MECHA-KIRILL""",
 
     "ASCII": r"""
           |_|_|
@@ -135,7 +135,7 @@ new era of tyranny, for I am MECHAKIRILL""",
 mass of metal and destruction falls back against the rear wall, conveniently catching the exit button, which now lights green.
 “Yoouu…ffaaaiillllll”, all signs of what could be considered life, are no-longer considered.""",
 
-    "health": 80,
+    "health": 100,
 
     "base_damage": 10,
 

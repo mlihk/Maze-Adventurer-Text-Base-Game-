@@ -23,10 +23,10 @@ def decrease_score():
 
 ##### Timer for score ######## Marcus
 def timeToHurry():
-    print('unknown voice: 3 minutes has passed, quick or we are all dead!')
+    print('unknown voice: 20 minutes has passed, quick or we are all dead!')
  
  
-timer = threading.Timer(180.0, timeToHurry)
+timer = threading.Timer(1200.0, timeToHurry)
 timer.start()
  
 startingTimer = time.time() #constant please do not touch
@@ -39,24 +39,23 @@ def getTimer(): #use to get the time taken to finish the game
  
 def timeToGrade(usedTime): # converts the time into a grade
     print("Your score is:",score)
-    if usedTime <= 60:
+    if usedTime <= 200:
         gradeS(usedTime)
         return
-    elif usedTime <= 120 and usedTime > 60:
+    elif usedTime <= 250 and usedTime > 200:
         gradeA(usedTime)
         return
-    elif usedTime <= 180 and usedTime > 120:
+    elif usedTime <= 300 and usedTime > 250:
         gradeB(usedTime)
-    elif usedTime <= 240 and usedTime > 180:
+    elif usedTime <= 350 and usedTime > 300:
         gradeC(usedTime)
-    elif usedTime > 240:
+    elif usedTime > 350:
         gradeD(usedTime)
  
 def gradeS(usedTime):
     print('Time used: ', math.floor(usedTime))
     print('Grade equivilant: S')
     print('unknown voice: Well done! You have shown an amazing performance that no one has ever done!')
-    playsound("victory.wav")
     sys.exit()
  
 def gradeA(usedTime):
@@ -422,7 +421,7 @@ def executecombatcommand(useitem, enemy):
         count = useitem["damage_dice"]      # Random damage based on dice throws
         rand_dmg = 0
         while count > 0:
-            roll = random.randint(1,useitem["damage"]+1)
+            roll = random.randint(1,useitem["damage"])
             roll_list.append(roll)
             rand_dmg = rand_dmg + roll
             count = count - 1
@@ -467,6 +466,7 @@ def enemiesattack(enemy):
     plrhealth = round(plrhealth, 1)
     if plrhealth <= 0:
         plrhealth = 0
+    damage = round(damage,1)
     print(enemy["name"] + " attacked and dealt " + str(damage) + " damage.")
     print("=======================================================================================================")
     print(r"""

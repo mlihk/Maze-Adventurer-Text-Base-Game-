@@ -119,7 +119,7 @@ item_armour = {
 }
 
 item_potion = {
-    "name": "healing potion (heals 30hp - single use)",
+    "name": "healing potion (heals 50hp - single use)",
 
     "class": "heal",
 
@@ -135,7 +135,7 @@ item_potion = {
     "description":
     "Fully replenishes health",
 
-    "healing": 30,
+    "healing": 50,
 
     "single-use": True    
 }

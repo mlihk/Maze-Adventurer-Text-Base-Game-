@@ -180,7 +180,7 @@ room_e = {
 
     "description":
     """You are in a chamber with a corridor leading NORTH and a door 
-leading SOUTH. The Southern door has wires attached to it.""",
+leading SOUTH and EAST. The Southern door has wires attached to it.""",
 
     "exits": {"north": "NE","south":"SE","east":"OE"},
 
@@ -219,7 +219,7 @@ room_br = {
     "name": "BR",
 
     "description":
-    """You are in a large room with the remains of Mechakirill 
+    """You are in a large room with the remains of Mecha-kirill 
 the light showing the activation of the exit button 
 is glowing green. To your SOUTH you see the exit to another room, 
 and a light in the distance.""",
