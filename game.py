@@ -374,26 +374,58 @@ def combat(current_room):
     print("                              ***","Your ring appears to glow!","***")
     print("=======================================================================================================")
     print(enemy["ASCII"])
-    while True:
-        combatturn(enemy)
-        printcombatitems()
-        valid = 0
-        while valid == 0:
-            command = normalise_input(input("What would you like to do?"))
-            if len(command) != 0 and command[0] == "use":
-                for item in inventory:
-                    if item["id"] == command[1] and item !=  item_dmg_gauntlet and item !=  item_armour:
-                        useitem = item
-                        valid = 1
-        print()
-        executecombatcommand(useitem, enemy)
-        if enemy["health"] <= 0:
-            print("=======================================================================================================")
-            print("                            ***","Your ring has stopped glowing!","***")
-            break
-        enemiesattack(enemy)
-        if plrhealth <= 0:
-            gameover()
+    if enemy == enemy_mecha:
+        while True:
+            if question() == True:
+                combatturn(enemy)
+                printcombatitems()
+                valid = 0
+                while valid == 0:
+                    command = normalise_input(input("What would you like to do?"))
+                    if len(command) != 0 and command[0] == "use":
+                        for item in inventory:
+                            if item["id"] == command[1] and item !=  item_dmg_gauntlet and item !=  item_armour:
+                                useitem = item
+                                valid = 1
+                print()
+                executecombatcommand(useitem, enemy)
+                if enemy["health"] <= 0:
+                    print("=======================================================================================================")
+                    print("                            ***","Your ring has stopped glowing!","***")
+                    break
+                enemiesattack(enemy)
+                if plrhealth <= 0:
+                    gameover()
+            else:
+                combatturn(enemy)
+                enemiesattack(enemy)
+                if enemy["health"] <= 0:
+                    print("=======================================================================================================")
+                    print("                            ***","Your ring has stopped glowing!","***")
+                    break
+                if plrhealth <= 0:
+                    gameover()                
+    else:
+        while True:
+            combatturn(enemy)
+            printcombatitems()
+            valid = 0
+            while valid == 0:
+                command = normalise_input(input("What would you like to do?"))
+                if len(command) != 0 and command[0] == "use":
+                    for item in inventory:
+                        if item["id"] == command[1] and item !=  item_dmg_gauntlet and item !=  item_armour:
+                            useitem = item
+                            valid = 1
+            print()
+            executecombatcommand(useitem, enemy)
+            if enemy["health"] <= 0:
+                print("=======================================================================================================")
+                print("                            ***","Your ring has stopped glowing!","***")
+                break
+            enemiesattack(enemy)
+            if plrhealth <= 0:
+                gameover()
         
 
 def combatturn(enemy):
@@ -477,7 +509,38 @@ def enemiesattack(enemy):
 | |\  |  __/>  <| |_    | | |_| | |  | | | |_|
 \_| \_/\___/_/\_\\__|   \_/\__,_|_|  |_| |_(_)
                                               
-                                              """)        
+                                              """)
+
+def question():
+    randomNumber = random.randint(0,15)
+    binaryNumber = bin(randomNumber)
+    binaryNumber = str(binaryNumber)
+    binaryNumber = str(binaryNumber)[2:]
+    print ("=======================================================================================================")
+
+    b = time.time()
+    answer = input(f"You have 10 seconds to convert {randomNumber} into BINARY: ")
+    a = time.time()
+    answerTime = a-b
+    
+    if (answerTime <= 10) and (binaryNumber == answer):
+        print("Correct!")
+        return True
+    elif (answerTime >= 10) and (binaryNumber != answer):
+        print("Wrong answer and ran out of time!")
+        return False
+    elif answerTime >= 10:
+        print("Ran out of time!")
+        return False
+    elif binaryNumber != answer:
+        print("Wrong answer!")
+        return False
+    else:
+        print("Wrong!")
+        return False
+    
+    
+
         
 def gameover():
     print('''   _____              __  __   ______      ____   __      __  ______   _____  

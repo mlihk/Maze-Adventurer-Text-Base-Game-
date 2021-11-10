@@ -103,6 +103,8 @@ item_dmg_gauntlet = {
 
     "id": "gauntlet",
 
+    "ASCII": "",
+
     "description":
     "Damage gauntlets increases your damage by 20%"
 }
@@ -113,6 +115,8 @@ item_armour = {
     "class": "modifier",
 
     "id": "armour",
+
+    "ASCII": "",
 
     "description":
     "Heavy armour absorbs 20% damage"
